@@ -7,14 +7,17 @@ Widget::Widget(QWidget *parent)
     list->addItem("@everyone");
     list->addItem("TEST");
     list->setDragDropMode(QAbstractItemView::InternalMove);
+    list->setMaximumWidth(150);
+    list->setMinimumWidth(150);
 
     Message = new QTextEdit;
+    Message->setMaximumHeight(100);
 
     Reply = new QTextEdit;
     Reply->setReadOnly(true);
 
     Send = new QPushButton("Send", this);
-    //Send->setMinimumSize(50, 50);
+    Send->setMinimumHeight(Message->height());
     connect(Send, SIGNAL (released()), this, SLOT (SendMessage()));
 
     layoutMB = new QHBoxLayout;
