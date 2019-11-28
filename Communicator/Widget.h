@@ -2,6 +2,9 @@
 #define WIDGET_H
 
 #include <QWidget>
+#include <QTextEdit>
+#include <QBoxLayout>
+#include <QPushButton>
 
 class Widget : public QWidget
 {
@@ -10,5 +13,15 @@ class Widget : public QWidget
 public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
+
+private slots:
+    void SendMessage();
+private:
+    QTextEdit *Message;
+    QTextEdit *Reply;
+    QPushButton *Send;
+    QHBoxLayout *layoutText;
+    QVBoxLayout *layout;
+
 };
 #endif // WIDGET_H
