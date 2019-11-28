@@ -1,7 +1,6 @@
 #include "Widget.h"
 
 #include <QApplication>
-#include <QAbstractButton>
 
 int main(int argc, char *argv[])
 {
